@@ -1,8 +1,13 @@
 import { View, Text } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { useEffect, VFC } from 'react';
 import tw from 'tailwind-rn';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types/types';
+import { Button } from 'react-native-elements';
 
-export const FlexBoxScreen = () => {
+type Props = NativeStackScreenProps<RootStackParamList, 'FlexBox'>;
+
+export const FlexBoxScreen: VFC<Props> = ({ navigation }) => {
   useEffect(() => {
     console.log('mounted Flexbox');
     return () => {
@@ -12,6 +17,12 @@ export const FlexBoxScreen = () => {
   return (
     <View style={tw('flex-1 bg-gray-300 justify-center items-center')}>
       <Text>FlexBox</Text>
+      <View style={tw('my-3')}>
+        <Button
+          title="Go to Hello"
+          onPress={() => navigation.navigate('Hello')}
+        />
+      </View>
     </View>
   );
 };
