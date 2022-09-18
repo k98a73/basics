@@ -2,8 +2,9 @@ import { View, Text } from 'react-native';
 import React, { useEffect, VFC } from 'react';
 import tw from 'tailwind-rn';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types/types';
 import { Button } from 'react-native-elements';
+
+import { RootStackParamList } from '../types/types';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Hello'>;
 
